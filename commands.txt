@@ -1,0 +1,9 @@
+mvn clean package spring-boot:build-image
+mvn clean package spring-aot:generate
+
+mvn -DskipTests=true -Pnative clean package
+mvn spring-aot:generate
+mvn  
+
+java -DspringAot=true
+
