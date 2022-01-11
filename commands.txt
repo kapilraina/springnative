@@ -7,3 +7,7 @@ mvn
 
 java -DspringAot=true
 
+sudo chmod 666 /var/run/docker.sock
+
+21.3.0.r17-grl
+
