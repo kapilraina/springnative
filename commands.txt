@@ -11,3 +11,7 @@ sudo chmod 666 /var/run/docker.sock
 
 21.3.0.r17-grl
 
+https://spring.io/blog/2021/12/09/new-aot-engine-brings-spring-native-to-the-next-level
+
+
+

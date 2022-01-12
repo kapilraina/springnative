@@ -56,24 +56,22 @@ import reactor.core.publisher.Flux;
 		resources = @ResourceHint(patterns = { "data/csvresource.csv" }), // Hint to Load Resources in Classpath
 		serializables = @SerializationHint(types = { Subject.class, String.class, Integer.class, Number.class }),
 
-		types = @TypeHint(types = {// Reflection
+		types = @TypeHint(types = { // Reflection
 				SimpleSubjectService.class
 		}, access = {
 				TypeAccess.DECLARED_CONSTRUCTORS,
 				TypeAccess.DECLARED_METHODS,
 				TypeAccess.PUBLIC_CONSTRUCTORS,
 				TypeAccess.PUBLIC_METHODS
-		}), jdkProxies ={ 
-			@JdkProxyHint(
-				types = {
-				com.example.reactivespringnative.CustomerService.class
+		}), jdkProxies = {
+				@JdkProxyHint(types = {
+						com.example.reactivespringnative.CustomerService.class
 				}),
-			@JdkProxyHint(
-				types = {
-					com.example.reactivespringnative.SubjectService.class,
-					org.springframework.aop.SpringProxy.class,
-					org.springframework.aop.framework.Advised.class,
-					org.springframework.core.DecoratingProxy.class
+				@JdkProxyHint(types = {
+						com.example.reactivespringnative.SubjectService.class,
+						org.springframework.aop.SpringProxy.class,
+						org.springframework.aop.framework.Advised.class,
+						org.springframework.core.DecoratingProxy.class
 				})
 
 		}, aotProxies = @AotProxyHint(targetClass = com.example.reactivespringnative.StandaloneSubjectService.class, proxyFeatures = ProxyBits.IS_STATIC)
